@@ -412,7 +412,7 @@ export default function DropdownNav() {
     }`;
 
   const panelClass = (name: string) =>
-    `absolute top-full mt-2 sm:mt-3 bg-white rounded-2xl shadow-2xl shadow-black/15 border border-[#EFE4D8] p-2.5 z-50 origin-top transition-all duration-300 max-h-[80vh] overflow-y-auto ${
+    `absolute top-full mt-2 sm:mt-3 bg-white rounded-2xl shadow-2xl shadow-black/15 border border-[#EFE4D8] p-2.5 z-50 origin-top transition-all duration-300 max-h-[75vh] overflow-y-auto ${
       openDropdown === name
         ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -428,9 +428,11 @@ export default function DropdownNav() {
       ref={containerRef}
       className="max-w-7xl mx-auto px-2 sm:px-4 -mt-10 relative z-40"
     >
-      <div className="bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl shadow-black/15 border border-[#EFE4D8] p-2 sm:p-3 grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-3">
+      {/* Container is relative so mobile dropdowns can span full container width */}
+      <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl shadow-black/15 border border-[#EFE4D8] p-2 sm:p-3 grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-3">
         
-        <div className="relative col-span-1">
+        {/* Destination Info */}
+        <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("destination")}
             className={navButtonClass("destination")}
@@ -450,7 +452,7 @@ export default function DropdownNav() {
           </button>
 
           <div
-            className={`${panelClass("destination")} left-0 w-[calc(100vw-2rem)] sm:w-[400px] md:w-[420px] max-w-[92vw] sm:max-w-none`}
+            className={`${panelClass("destination")} left-0 right-0 w-full md:w-[420px] md:right-auto md:left-0`}
           >
             <div className="px-3 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between gap-2">
               <span className="truncate">Explore By Theme</span>
@@ -608,7 +610,8 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        <div className="relative col-span-1">
+        {/* Downloads */}
+        <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("downloads")}
             className={navButtonClass("downloads")}
@@ -627,8 +630,9 @@ export default function DropdownNav() {
             />
           </button>
 
+          {/* FIXED: On mobile it spans full width of container (left-0 right-0 w-full), on desktop md:left-0 md:w-[420px] */}
           <div
-            className={`${panelClass("downloads")} left-0 sm:left-0 md:left-auto md:-left-4 lg:left-0 w-[calc(100vw-2rem)] sm:w-[410px] max-w-[92vw] sm:max-w-none`}
+            className={`${panelClass("downloads")} left-0 right-0 w-full md:w-[420px] md:right-auto md:left-0`}
           >
             <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between gap-2">
               <span className="truncate">Downloads Library</span>
@@ -648,7 +652,7 @@ export default function DropdownNav() {
                       : "bg-[#FAF7F2] hover:bg-[#FAF3EA]"
                   }`}
                 >
-                  <div className="flex items-center gap-3 min-w-0 pr-2">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
                     <span className="w-8 h-8 rounded-lg bg-white border border-[#EBDCC9] flex items-center justify-center shrink-0 transition-colors">
                       <Route
                         className="w-4 h-4 text-[#976634]"
@@ -912,7 +916,8 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        <div className="relative col-span-1">
+        {/* Travel Essentials */}
+        <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("essentials")}
             className={navButtonClass("essentials")}
@@ -932,7 +937,7 @@ export default function DropdownNav() {
           </button>
 
           <div
-            className={`${panelClass("essentials")} left-0 sm:left-0 md:-left-12 lg:left-0 w-[calc(100vw-2rem)] sm:w-[410px] max-w-[92vw] sm:max-w-none`}
+            className={`${panelClass("essentials")} left-0 right-0 w-full md:w-[420px] md:right-auto md:left-0`}
           >
             <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between gap-2">
               <span className="truncate">Travel Essentials</span>
@@ -1233,7 +1238,8 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        <div className="relative col-span-1">
+        {/* Contact Us */}
+        <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("contact")}
             className={navButtonClass("contact")}
@@ -1253,7 +1259,7 @@ export default function DropdownNav() {
           </button>
 
           <div
-            className={`${panelClass("contact")} right-0 sm:right-0 w-[calc(100vw-2rem)] sm:w-96 max-w-[92vw] sm:max-w-none`}
+            className={`${panelClass("contact")} left-0 right-0 w-full md:w-96 md:left-auto md:right-0`}
           >
             <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between gap-2">
               <span className="truncate">Trade Support & Contacts</span>
@@ -1338,6 +1344,7 @@ export default function DropdownNav() {
           </div>
         </div>
 
+        {/* Interactive Map Button */}
         <div className="col-span-2 md:col-span-1">
           <Link
             href="/maps"
