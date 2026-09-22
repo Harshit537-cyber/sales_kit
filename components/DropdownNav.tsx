@@ -380,9 +380,9 @@ export default function DropdownNav() {
     <div className="w-full bg-[#F5EFEB] relative z-40">
       <div
         ref={containerRef}
-        className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -translate-y-7 sm:-translate-y-9"
+        className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-8 sm:-mt-10"
       >
-        <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-xl shadow-black/15 border border-[#EFE4D8] p-2 sm:p-3 grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-2.5">
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-xl shadow-black/15 border border-[#EFE4D8] p-2.5 sm:p-3 grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-2.5">
           <div className="relative col-span-1">
             <button
               onClick={() => toggle("destination")}
@@ -399,7 +399,7 @@ export default function DropdownNav() {
                 </span>
               </span>
               <ChevronDown
-                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 ${
+                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-[#976634] transition-transform duration-300 ${
                   openDropdown === "destination" ? "rotate-180" : ""
                 }`}
               />
@@ -517,7 +517,7 @@ export default function DropdownNav() {
                         </span>
                       </div>
                       <div className="flex items-center gap-1.5 shrink-0">
-                        <span className="text-[10px] font-mono bg-[#241A10]/5 text-[#976634] px-1.5 py-0.5 rounded font-semibold">
+                        <span className="text-[10px] font-mono bg-[#241A10]/5 text-[#976634] px-2 py-0.5 rounded font-semibold">
                           {luxuryHotels.length}
                         </span>
                         <ChevronDown
@@ -577,7 +577,7 @@ export default function DropdownNav() {
                 <span className="leading-tight text-left">Downloads</span>
               </span>
               <ChevronDown
-                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 ${
+                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-[#976634] transition-transform duration-300 ${
                   openDropdown === "downloads" ? "rotate-180" : ""
                 }`}
               />
@@ -657,7 +657,7 @@ export default function DropdownNav() {
                 <span className="leading-tight text-left">Travel Essentials</span>
               </span>
               <ChevronDown
-                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 ${
+                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-[#976634] transition-transform duration-300 ${
                   openDropdown === "essentials" ? "rotate-180" : ""
                 }`}
               />
@@ -978,7 +978,7 @@ export default function DropdownNav() {
                 <span className="leading-tight text-left">Contact Details</span>
               </span>
               <ChevronDown
-                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 ${
+                className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-[#976634] transition-transform duration-300 ${
                   openDropdown === "contact" ? "rotate-180" : ""
                 }`}
               />
