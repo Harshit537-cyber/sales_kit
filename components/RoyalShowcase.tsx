@@ -343,7 +343,7 @@ export default function RoyalShowcase() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F5EFEB] pt-8 pb-16 text-[#2B1B10]">
+    <section className="relative w-full overflow-hidden bg-[#F5EFEB] -mt-1 pt-0 pb-16 text-[#2B1B10]">
       <div className="pointer-events-none absolute -top-40 -left-40 h-80 w-80 rounded-full bg-[#EADCCB]/60 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-[#DFCEBA]/60 blur-[120px]" />
 
