@@ -343,21 +343,21 @@ export default function RoyalShowcase() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F5EFEB] -mt-1 pt-0 pb-16 text-[#2B1B10]">
+    <section className="relative w-full overflow-hidden bg-[#F5EFEB] py-20 text-[#2B1B10]">
       <div className="pointer-events-none absolute -top-40 -left-40 h-80 w-80 rounded-full bg-[#EADCCB]/60 blur-[100px]" />
       <div className="pointer-events-none absolute -bottom-40 -right-40 h-80 w-80 rounded-full bg-[#DFCEBA]/60 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-start justify-between gap-6 border-b border-[#D8C7B3] pb-8 md:flex-row md:items-end">
+        <div className="flex flex-col items-start justify-between gap-6 border-b border-[#D8C7B3] pb-10 md:flex-row md:items-end">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#8F5D38]/30 bg-[#ECE2D5] px-3.5 py-1 text-[11px] font-bold tracking-widest text-[#7C4824] uppercase shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#8F5D38]/30 bg-[#ECE2D5] px-4 py-1.5 text-[11px] font-bold tracking-widest text-[#7C4824] uppercase shadow-sm">
               <span className="h-2 w-2 rounded-full bg-[#B84A1C] animate-pulse" />
               MADHYA PRADESH OFFICIAL EXPEDITIONS
             </div>
-            <h2 className="mt-3.5 font-serif text-4xl font-bold tracking-tight text-[#2B1B10] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 font-serif text-4xl font-bold tracking-tight text-[#2B1B10] sm:text-5xl lg:text-6xl">
               The Sovereign <span className="italic text-[#8F5D38]">Chronicles</span>
             </h2>
-            <p className="mt-2.5 max-w-xl text-sm leading-relaxed text-[#6E533F]">
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#6E533F]">
               Explore {destinations.length || 28} magnificent destinations across Central India, from ancient rock carvings and water palaces to the realm of the Royal Bengal Tiger.
             </p>
           </div>
@@ -407,7 +407,7 @@ export default function RoyalShowcase() {
             </div>
           </div>
         ) : activeDest ? (
-          <div className="mt-8 grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12">
+          <div className="mt-12 grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12">
             <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-[#D5C2AE] bg-[#FCF9F4] p-6 shadow-xl lg:col-span-7 sm:p-8">
               <div>
                 <div className="relative h-[380px] w-full overflow-hidden rounded-2xl border border-[#DECDBB] shadow-md">
@@ -594,7 +594,7 @@ export default function RoyalShowcase() {
           </div>
         ) : null}
 
-        <div className="mt-12 grid grid-cols-2 gap-4 rounded-3xl border border-[#D5C2AE] bg-[#FAF5EE] p-6 sm:grid-cols-3 lg:grid-cols-5 shadow-sm">
+        <div className="mt-14 grid grid-cols-2 gap-4 rounded-3xl border border-[#D5C2AE] bg-[#FAF5EE] p-6 sm:grid-cols-3 lg:grid-cols-5 shadow-sm">
           {statsRibbon.map((stat, i) => (
             <AnimatedCounter key={i} stat={stat} />
           ))}

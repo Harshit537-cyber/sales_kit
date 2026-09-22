@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import mpMapImage from "@/assets/MadhyaPradesh.jpeg";
+// 1. API service import karein (static image import hata diya gaya hai)
+import { getMaps } from "@/Service/api/map";
 
 export default function InteractiveMap() {
   const [scale, setScale] = useState(1);
@@ -10,7 +11,39 @@ export default function InteractiveMap() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // 2. Dynamic Image aur Loading ke liye state
+  const [mapImageUrl, setMapImageUrl] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
+
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // API Call se Madhya-Pardesh map fetch karna
+  useEffect(() => {
+    const fetchMadhyaPradeshMap = async () => {
+      try {
+        setLoading(true);
+        const res = await getMaps();
+
+        // API response me se "Madhya-Pardesh" ko find karna
+        const mpMap = res?.data?.find(
+          (item: any) =>
+            item.cityName?.toLowerCase() === "madhya-pardesh" ||
+            item.cityName?.toLowerCase() === "madhya pradesh"
+        );
+
+        if (mpMap?.mapImage) {
+          setMapImageUrl(mpMap.mapImage);
+        }
+      } catch (error) {
+        console.error("Failed to load Madhya Pradesh map:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMadhyaPradeshMap();
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -103,7 +136,7 @@ export default function InteractiveMap() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#8f5d38]/30 bg-[#fbf7f0] px-4 py-1.5 text-xs font-bold tracking-widest text-[#8f5d38]">
                 <span className="h-2 w-2 animate-ping rounded-full bg-[#b84a1c]" />
-                MADHYA PRADESH REGIONAL CARTOGRAPHYs
+                MADHYA PRADESH REGIONAL CARTOGRAPHY
               </div>
               <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-[#2d1b10] sm:text-4xl lg:text-5xl">
                 Explore The <span className="italic text-[#8f5d38]">Heart of India</span>
@@ -149,15 +182,26 @@ export default function InteractiveMap() {
                   transition: isDragging ? "none" : "transform 0.25s cubic-bezier(0.2, 0, 0, 1)",
                 }}
               >
-                <Image
-                  src={mpMapImage}
-                  alt="Madhya Pradesh Full Map"
-                  fill
-                  priority
-                  sizes="(max-width: 1280px) 100vw, 1280px"
-                  draggable={false}
-                  className="pointer-events-none select-none object-contain p-2"
-                />
+                {loading ? (
+                  <div className="flex h-full w-full items-center justify-center text-[#8f5d38] font-bold">
+                    Loading Map...
+                  </div>
+                ) : mapImageUrl ? (
+                  <Image
+                    src={mapImageUrl}
+                    alt="Madhya Pradesh Map"
+                    fill
+                    priority
+                    unoptimized // Cloudinary URL hostname error se bachne ke liye
+                    sizes="(max-width: 1280px) 100vw, 1280px"
+                    draggable={false}
+                    className="pointer-events-none select-none object-contain p-2"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-[#8f5d38]">
+                    Map image not found
+                  </div>
+                )}
               </div>
 
               <div className="absolute bottom-6 right-6 z-20 flex flex-col gap-2 rounded-2xl border border-[#b89e85] bg-[#fdfaf5]/90 p-2 shadow-xl backdrop-blur-md">
@@ -211,6 +255,7 @@ export default function InteractiveMap() {
         </div>
       </section>
 
+      {/* Fullscreen View */}
       {isFullscreen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-xl animate-in fade-in zoom-in-95 duration-300">
           <div className="absolute top-5 right-5 z-50 flex items-center gap-3">
@@ -245,15 +290,18 @@ export default function InteractiveMap() {
                 transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.2, 0, 0, 1)",
               }}
             >
-              <Image
-                src={mpMapImage}
-                alt="Madhya Pradesh Fullscreen Map"
-                fill
-                priority
-                sizes="100vw"
-                draggable={false}
-                className="pointer-events-none select-none object-contain drop-shadow-2xl"
-              />
+              {mapImageUrl && (
+                <Image
+                  src={mapImageUrl}
+                  alt="Madhya Pradesh Fullscreen Map"
+                  fill
+                  priority
+                  unoptimized
+                  sizes="100vw"
+                  draggable={false}
+                  className="pointer-events-none select-none object-contain drop-shadow-2xl"
+                />
+              )}
             </div>
 
             <div className="absolute bottom-8 right-8 z-50 flex flex-col gap-2.5 rounded-2xl border border-white/20 bg-black/60 p-2 backdrop-blur-lg">

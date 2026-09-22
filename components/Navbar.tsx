@@ -2,7 +2,7 @@
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#170E08]/90 backdrop-blur-md border-b border-[#3D2817]">
+    <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-[#170E08]/90 backdrop-blur-md border-b border-[#3D2817]">
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between py-4">
         <a href="#" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#A47141] to-[#C59A68] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">

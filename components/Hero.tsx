@@ -32,7 +32,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative bg-[#170E08] text-[#FAF5EE] overflow-hidden border-b border-[#3D2817] pt-16 pb-20">
+    <section className="relative bg-[#170E08] text-[#FAF5EE] overflow-hidden border-b border-[#3D2817] pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+      {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -51,47 +52,47 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#120B06]/75 backdrop-blur-[1px]" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#E6C6A2] text-xs font-semibold uppercase tracking-wider mb-6">
+      {/* Main Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#E6C6A2] text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6">
           <span className="w-2 h-2 rounded-full bg-[#C28E58]" />
           MP Escapes • B2B Travel Portal
         </div>
 
+        {/* Heading */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
           Explore Madhya Pradesh. <br />
           <span className="text-[#D8A36E]">Everything You Need to Plan & Book.</span>
         </h1>
 
-        <p className="max-w-2xl mt-5 text-base sm:text-lg text-[#E3D7CC] font-normal leading-relaxed">
+        {/* Subtitle */}
+        <p className="max-w-2xl mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-[#E3D7CC] font-normal leading-relaxed px-2">
           Complete destination dossiers, safari information, high-quality promotional photos, videos, and route maps — made simple for travel partners.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-3.5 items-center justify-center">
+        {/* Single Button (Download button removed) */}
+        <div className="mt-7 sm:mt-8 flex items-center justify-center">
           <a
             href="#destinations"
-            className="px-6 py-3 rounded-xl bg-[#C28E58] hover:bg-[#b37f4a] text-white font-semibold text-sm shadow-md transition-all active:scale-95"
+            className="px-7 py-3.5 rounded-xl bg-[#C28E58] hover:bg-[#b37f4a] text-white font-semibold text-sm shadow-lg shadow-[#C28E58]/20 transition-all hover:scale-[1.02] active:scale-95"
           >
             Explore Destinations
           </a>
-          <a
-            href="#downloads"
-            className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-[#FAF5EE] font-semibold text-sm transition-all active:scale-95"
-          >
-            Download Photos & Maps
-          </a>
         </div>
 
-        <div className="mt-10 flex items-center gap-3">
-          <span className="text-xs text-[#C8B8A8] font-medium">
+        {/* Featured Slider Indicators */}
+        <div className="mt-8 sm:mt-10 flex items-center justify-center gap-2.5 sm:gap-3">
+          <span className="text-xs sm:text-sm text-[#C8B8A8] font-medium">
             Featured: <strong className="text-white font-semibold">{slides[active].label}</strong>
           </span>
 
-          <div className="flex gap-1.5 ml-2">
+          <div className="flex gap-1.5 ml-1">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActive(index)}
-                className={`h-2 rounded-full transition-all ${
+                className={`h-2 rounded-full transition-all duration-300 ${
                   index === active ? "w-6 bg-[#C28E58]" : "w-2 bg-white/30 hover:bg-white/60"
                 }`}
                 aria-label={`Slide ${index + 1}`}
