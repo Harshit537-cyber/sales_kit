@@ -358,14 +358,14 @@ export default function DropdownNav() {
   };
 
   const navButtonClass = (name: string) =>
-    `w-full text-left px-4 sm:px-5 py-4 rounded-2xl font-semibold text-sm flex items-center justify-between border transition-all duration-300 ${
+    `w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl font-semibold text-sm flex items-center justify-between border transition-all duration-300 ${
       openDropdown === name
         ? "bg-gradient-to-br from-[#2A1D12] to-[#170E08] text-[#FAF5EE] border-[#B38350]/50 shadow-lg shadow-black/20"
         : "bg-[#FAF7F2] text-[#241A10] border-[#E8DDD4] hover:border-[#B38350] hover:bg-white"
     }`;
 
   const panelClass = (name: string) =>
-    `absolute top-full mt-3 bg-white rounded-2xl shadow-2xl shadow-black/10 border border-[#EFE4D8] p-2.5 z-50 origin-top transition-all duration-300 ${
+    `absolute top-full mt-2 bg-white rounded-2xl shadow-2xl shadow-black/10 border border-[#EFE4D8] p-2.5 z-50 origin-top transition-all duration-300 ${
       openDropdown === name
         ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
         : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -379,9 +379,9 @@ export default function DropdownNav() {
   return (
     <div
       ref={containerRef}
-      className="max-w-7xl mx-auto px-4 -mt-10 relative z-40"
+      className="max-w-7xl mx-auto px-4 -mt-10 mb-0 pb-0 relative z-40"
     >
-      <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl shadow-black/20 border border-[#EFE4D8] p-3 grid grid-cols-2 md:grid-cols-5 gap-3">
+      <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-xl shadow-black/15 border border-[#EFE4D8] p-2.5 grid grid-cols-2 md:grid-cols-5 gap-2.5">
         <div className="relative col-span-1">
           <button
             onClick={() => toggle("destination")}
@@ -404,7 +404,7 @@ export default function DropdownNav() {
           <div
             className={`${panelClass("destination")} left-0 w-88 md:w-[420px] max-h-[460px] overflow-y-auto`}
           >
-            <div className="px-3.5 py-2.5 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
+            <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
               <span>Explore By Theme</span>
               <span className="text-[10px] text-[#976634] font-mono">
                 {destinations.length} Destinations
@@ -582,7 +582,7 @@ export default function DropdownNav() {
           <div
             className={`${panelClass("downloads")} left-0 w-80 md:w-88 max-h-96 overflow-y-auto`}
           >
-            <div className="px-3.5 py-2.5 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
+            <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
               <span>Downloads Library</span>
               <span className="text-[10px] text-[#976634] font-mono">
                 3 Categories
@@ -662,7 +662,7 @@ export default function DropdownNav() {
           <div
             className={`${panelClass("essentials")} left-0 w-88 md:w-[410px] max-h-[460px] overflow-y-auto`}
           >
-            <div className="px-3.5 py-2.5 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
+            <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
               <span>Travel Essentials</span>
               <span className="text-[10px] text-[#976634] font-mono">
                 Guide & Info
@@ -983,7 +983,7 @@ export default function DropdownNav() {
           <div
             className={`${panelClass("contact")} right-0 w-88 md:w-96 max-h-[440px] overflow-y-auto`}
           >
-            <div className="px-3.5 py-2.5 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
+            <div className="px-3.5 py-2 mb-1 font-serif text-sm font-semibold text-[#241A10] border-b border-[#F3EBE1] flex items-center justify-between">
               <span>Trade Support & Contacts</span>
               <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-mono font-medium">
                 Online
@@ -1073,7 +1073,7 @@ export default function DropdownNav() {
         <div className="col-span-2 md:col-span-1">
           <Link
             href="/maps"
-            className="w-full h-full min-h-[52px] px-5 py-4 rounded-2xl font-semibold text-sm flex items-center justify-between bg-gradient-to-r from-[#C28E58] to-[#8A5A2E] text-white shadow-lg shadow-[#976634]/25 hover:brightness-110 hover:scale-[1.02] active:scale-95 transition-all duration-300"
+            className="w-full h-full min-h-[48px] px-5 py-3.5 rounded-2xl font-semibold text-sm flex items-center justify-between bg-gradient-to-r from-[#C28E58] to-[#8A5A2E] text-white shadow-md shadow-[#976634]/25 hover:brightness-110 hover:scale-[1.01] active:scale-95 transition-all duration-300"
           >
             <span>Interactive Map</span>
             <Map className="w-4 h-4" strokeWidth={2.25} />

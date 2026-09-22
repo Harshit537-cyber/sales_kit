@@ -103,7 +103,7 @@ export default function InteractiveMap() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#8f5d38]/30 bg-[#fbf7f0] px-4 py-1.5 text-xs font-bold tracking-widest text-[#8f5d38]">
                 <span className="h-2 w-2 animate-ping rounded-full bg-[#b84a1c]" />
-                MADHYA PRADESH REGIONAL CARTOGRAPHY
+                MADHYA PRADESH REGIONAL CARTOGRAPHYs
               </div>
               <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-[#2d1b10] sm:text-4xl lg:text-5xl">
                 Explore The <span className="italic text-[#8f5d38]">Heart of India</span>
