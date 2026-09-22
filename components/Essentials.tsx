@@ -166,7 +166,7 @@ export default function Downloads() {
   };
 
   return (
-    <section id="downloads" className="relative bg-[#F4EFE6] text-[#2A1D15] pt-10 sm:pt-14 pb-20 sm:pb-28 overflow-hidden selection:bg-[#8B5E3C] selection:text-white" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
+    <section id="downloads" className="relative bg-[#FAF5EE] text-[#2D2118] pt-12 sm:pt-16 pb-24 sm:pb-32 overflow-hidden selection:bg-[#8B5E3C] selection:text-white" style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
@@ -227,7 +227,7 @@ export default function Downloads() {
           left: 0;
           width: 30%;
           height: 100%;
-          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+          background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
           pointer-events: none;
           opacity: 0;
         }
@@ -262,28 +262,31 @@ export default function Downloads() {
         }
       `}</style>
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(184,135,85,0.12),transparent)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_90%,rgba(139,94,60,0.06),transparent_50%)] pointer-events-none" />
+      {/* Subtle coffee glow gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(210,180,140,0.18),transparent)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_90%,rgba(180,130,90,0.08),transparent_50%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
 
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14 card-enter">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#CBB8A3] bg-[#EBE0D2]/80 backdrop-blur-md mb-4 shadow-xs badge-drop">
+        {/* Section Header */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16 card-enter">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#D8C7B5] bg-[#F2ECE4] backdrop-blur-md mb-4 shadow-xs badge-drop">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8B5E3C] animate-pulse" />
             <span className="text-[10px] tracking-[0.28em] uppercase text-[#6C4A30] font-bold font-mono">
               Trade Collateral Vault &bull; Release 2025/26
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.08] text-[#24160E] mb-3">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.08] text-[#22160F] mb-3">
             Client-Ready Collateral <br />
             <span className="italic font-light text-[#8B5E3C]">& Media Toolkits</span>
           </h2>
 
-          <p className="text-xs sm:text-sm text-[#614A3B] leading-relaxed font-light max-w-xl">
+          <p className="text-xs sm:text-sm text-[#5C4638] leading-relaxed font-light max-w-xl">
             Unbranded, white-label verified materials ready to export straight to ultra-high-net-worth travellers and boutique agency itineraries.
           </p>
 
+          {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
             {categories.map((cat) => (
               <button
@@ -291,8 +294,8 @@ export default function Downloads() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-xs font-mono tracking-wider transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-[#2A1D15] text-[#FAF7F2] shadow-md shadow-[#2A1D15]/20 scale-105"
-                    : "bg-[#EBE2D5] text-[#695242] hover:bg-[#E2D5C4] hover:text-[#2A1D15] border border-[#DECFC0] hover:scale-105"
+                    ? "bg-[#2D2118] text-[#FAF5EE] shadow-md shadow-[#2D2118]/20 scale-105"
+                    : "bg-[#F2ECE4] text-[#695242] hover:bg-[#EAE1D5] hover:text-[#2D2118] border border-[#DCCEC0] hover:scale-105"
                 }`}
               >
                 {cat}
@@ -301,7 +304,8 @@ export default function Downloads() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Download Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredItems.map((item, index) => {
             const isDownloading = downloadingId === item.id;
             const isDownloaded = downloadedIds.includes(item.id);
@@ -310,19 +314,21 @@ export default function Downloads() {
               <div
                 key={item.id}
                 style={{ animationDelay: `${index * 90}ms` }}
-                className="card-enter card-shine group relative bg-[#FAF7F2] rounded-3xl p-6 border border-[#DECFC0] hover:border-[#8B5E3C]/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#3B2618]/10 flex flex-col justify-between overflow-hidden"
+                className="card-enter card-shine group relative bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-7 border border-[#E2D5C8] hover:border-[#8B5E3C]/60 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#4A3324]/10 flex flex-col justify-between overflow-hidden shadow-sm"
               >
-                <div className="card-glow-blob absolute top-0 right-0 w-28 h-28 bg-gradient-to-bl from-[#EFE5D7] via-transparent to-transparent opacity-60 rounded-bl-full pointer-events-none group-hover:scale-125 group-hover:opacity-90 transition-transform duration-500" />
+                {/* Background glow on card hover */}
+                <div className="card-glow-blob absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#F7EFE8] via-transparent to-transparent opacity-70 rounded-bl-full pointer-events-none group-hover:scale-125 group-hover:opacity-100 transition-transform duration-500" />
                 <div className="absolute inset-0 rounded-3xl border-2 border-[#8B5E3C]/0 group-hover:border-[#8B5E3C]/20 transition-colors duration-500 pointer-events-none" />
 
                 <div>
+                  {/* Card Header */}
                   <div className="flex items-center justify-between gap-3 mb-5">
-                    <div className="icon-hover pulse-ring w-12 h-12 rounded-2xl bg-[#F0E6D8] border border-[#DFCFC0] flex items-center justify-center text-2xl shadow-xs group-hover:scale-110 transition-transform duration-300">
+                    <div className="icon-hover pulse-ring w-12 h-12 rounded-2xl bg-[#F4EDE5] border border-[#E5DACD] flex items-center justify-center text-2xl shadow-xs group-hover:scale-110 transition-transform duration-300">
                       {item.icon}
                     </div>
 
                     <div className="flex flex-col items-end gap-1">
-                      <span className="text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded-lg bg-[#EFE5D7] text-[#6E4B31] border border-[#DFCFC0]">
+                      <span className="text-[10px] font-mono font-bold tracking-widest px-2.5 py-1 rounded-lg bg-[#F4EDE5] text-[#785339] border border-[#E5DACD]">
                         {item.format} &bull; {item.size}
                       </span>
                       <span className="text-[10px] font-mono text-[#8C7564] tracking-wide">
@@ -331,31 +337,35 @@ export default function Downloads() {
                     </div>
                   </div>
 
+                  {/* Category Tag */}
                   <div className="mb-2">
                     <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-[#8B5E3C] font-semibold">
                       {item.category}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-lg font-semibold text-[#24160E] leading-snug tracking-tight mb-2 group-hover:text-[#8B5E3C] transition-colors duration-300">
+                  {/* Title */}
+                  <h3 className="font-serif text-lg font-semibold text-[#22160F] leading-snug tracking-tight mb-2 group-hover:text-[#8B5E3C] transition-colors duration-300">
                     {item.name}
                   </h3>
 
-                  <p className="text-xs text-[#695445] leading-relaxed font-light mb-5">
+                  {/* Description */}
+                  <p className="text-xs text-[#614A3B] leading-relaxed font-light mb-6">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#EAE0D3]">
+                {/* Card Button */}
+                <div className="pt-4 border-t border-[#EFE8E1]">
                   <button
                     onClick={() => handleDownload(item)}
                     disabled={isDownloading}
-                    className={`relative w-full py-3 px-4 rounded-xl text-xs font-serif font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden shadow-sm active:scale-95 ${
+                    className={`relative w-full py-3.5 px-4 rounded-xl text-xs font-serif font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden shadow-xs active:scale-95 ${
                       isDownloaded
-                        ? "bg-[#E6DDD0] text-[#362419] border border-[#CBB8A3]"
+                        ? "bg-[#EDE3DA] text-[#422E21] border border-[#D4C3B3]"
                         : isDownloading
-                        ? "bg-[#3D291D] text-[#FAF6F0] btn-shimmer"
-                        : "bg-[#2A1D15] hover:bg-[#3D2B20] text-[#FAF7F2] hover:shadow-lg hover:shadow-[#2A1D15]/30"
+                        ? "bg-[#3D291D] text-[#FAF5EE] btn-shimmer"
+                        : "bg-[#2D2118] hover:bg-[#402F23] text-[#FAF5EE] hover:shadow-lg hover:shadow-[#2D2118]/25"
                     }`}
                   >
                     {isDownloading ? (
@@ -407,16 +417,17 @@ export default function Downloads() {
           })}
         </div>
 
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#ECE2D5] via-[#EFE6DB] to-[#E9DFD0] border border-[#DECFC0] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 card-enter">
+        {/* Custom White-Label Banner */}
+        <div className="mt-14 sm:mt-18 p-6 sm:p-9 rounded-3xl bg-gradient-to-r from-[#F2ECE4] via-[#F7F1EB] to-[#EFE7DE] border border-[#DDCFC0] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 card-enter">
           <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-2xl bg-[#FAF7F2] border border-[#DECFC0] flex items-center justify-center text-lg shrink-0 shadow-xs icon-hover">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-[#D5C4B4] flex items-center justify-center text-xl shrink-0 shadow-xs icon-hover">
               ⚡
             </div>
             <div>
-              <h4 className="font-serif text-base sm:text-lg font-bold text-[#24160E]">
+              <h4 className="font-serif text-base sm:text-lg font-bold text-[#22160F]">
                 Need Custom White-Labeling with Agency Branding?
               </h4>
-              <p className="text-xs text-[#6B5546] font-light mt-0.5">
+              <p className="text-xs text-[#614A3B] font-light mt-0.5">
                 We imprint your tour operating logo, company disclaimer, and custom margins at zero surcharge within 2 hours.
               </p>
             </div>
@@ -426,7 +437,7 @@ export default function Downloads() {
             href="https://wa.me/919876543210"
             target="_blank"
             rel="noreferrer"
-            className="shrink-0 px-5 py-3 rounded-xl border border-[#C5B099] bg-[#FAF7F2] hover:bg-[#2A1D15] hover:text-white text-[#2A1D15] text-xs font-serif font-bold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            className="shrink-0 px-6 py-3.5 rounded-xl border border-[#CBB8A3] bg-white hover:bg-[#2D2118] hover:text-white text-[#2D2118] text-xs font-serif font-bold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
           >
             Request Custom Deck
           </a>

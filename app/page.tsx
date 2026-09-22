@@ -7,6 +7,7 @@ import Destinations from "@/components/Destinations";
 import Essentials from "@/components/Essentials";
 import InteractiveMap from "@/components/InteractiveMap";
 import Footer from "@/components/Footer";
+import RoyalShowcase from "@/components/RoyalShowcase";
 
 export default function SalesKitPage() {
   return (
@@ -14,8 +15,9 @@ export default function SalesKitPage() {
       <Navbar />
       <Hero />
       <DropdownNav />
-      <Destinations />
-      <Essentials />
+      {/* <Destinations /> */}
+      {/* <Essentials /> */}
+      <RoyalShowcase />
       <InteractiveMap />
       <Footer />
     </main>

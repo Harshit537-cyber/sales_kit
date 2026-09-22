@@ -28,7 +28,7 @@ export default function Footer() {
 
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href="https://wa.me/919876543210?text=Hello%2C%20I%20am%20a%20travel%20partner%20looking%20for%20MP%20itinerary%20support."
+                href="https://wa.me/918269950599?text=Hello%2C%20I%20am%20a%20travel%20partner%20looking%20for%20MP%20itinerary%20support."
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-xs font-bold uppercase tracking-wider text-black shadow-lg transition-all hover:bg-[#20bd5a] hover:shadow-[#25D366]/20"
@@ -36,7 +36,7 @@ export default function Footer() {
                 <span>💬</span> WhatsApp Trade Desk
               </a>
               <a
-                href="mailto:trade@mpescapes.com"
+                href="mailto:sales@mpescapes.com"
                 className="flex items-center gap-2 rounded-xl border border-[#3e2617] bg-[#22130b] px-5 py-3 text-xs font-bold uppercase tracking-wider text-[#e6d5c3] transition hover:bg-[#2d1a0f] hover:text-white"
               >
                 <span>✉</span> Email Dispatch
@@ -56,7 +56,7 @@ export default function Footer() {
                   MP ESCAPES
                 </h4>
                 <p className="text-[10px] uppercase tracking-widest text-[#c28e58]">
-                  The Heart of Incredible India
+                  DMC For Central India
                 </p>
               </div>
             </div>
@@ -119,28 +119,28 @@ export default function Footer() {
             </h5>
             <ul className="mt-4 space-y-2.5 text-xs text-[#a8988b]">
               <li>
-                <a href="#map" className="transition hover:text-white">
+                <a href="/maps" className="transition hover:text-white">
                   Interactive Regional Maps
                 </a>
               </li>
               <li>
-                <a href="#map" className="transition hover:text-white">
-                  PDF Itinerary Downloads
+                <a href="/downloads/images" className="transition hover:text-white">
+                  Destination Media Assets
                 </a>
               </li>
               <li>
-                <a href="#destinations" className="transition hover:text-white">
-                  Airport Distance Matrix
+                <a href="/downloads/videos" className="transition hover:text-white">
+                  Promotional Reel Archives
                 </a>
               </li>
               <li>
                 <a href="#essentials" className="transition hover:text-white">
-                  Safari Booking Protocols
+                  Seasonal Travel Guides
                 </a>
               </li>
               <li>
-                <a href="#collateral" className="transition hover:text-white">
-                  White-label Client Dossiers
+                <a href="#destinations" className="transition hover:text-white">
+                  Luxury Wildlife Lodges
                 </a>
               </li>
             </ul>
@@ -148,26 +148,53 @@ export default function Footer() {
 
           <div>
             <h5 className="font-serif text-sm font-semibold uppercase tracking-wider text-[#dfb57b]">
-              Trade Liaison
+              Trade Liaison & Office
             </h5>
-            <div className="mt-4 space-y-3 text-xs text-[#a8988b]">
+            <div className="mt-4 space-y-3.5 text-xs text-[#a8988b]">
               <div>
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-[#c28e58]">
-                  Partner Operations
+                  Registered Address
                 </span>
-                <p className="mt-0.5 text-white font-mono text-[11px]">trade@mpescapes.com</p>
+                <p className="mt-1 text-white text-[11px] leading-relaxed">
+                  MP Escapes Pvt Ltd<br />
+                  203 Starlit Tower, 29 YN Road<br />
+                  Indore 452003, Madhya Pradesh
+                </p>
+              </div>
+              <div>
+                <span className="block text-[10px] font-bold uppercase tracking-wider text-[#c28e58]">
+                  Partner Email
+                </span>
+                <a
+                  href="mailto:sales@mpescapes.com"
+                  className="mt-0.5 block text-white font-mono text-[11px] hover:text-[#c28e58] transition-colors"
+                >
+                  sales@mpescapes.com
+                </a>
               </div>
               <div>
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-[#c28e58]">
                   Direct Hotline
                 </span>
-                <p className="mt-0.5 text-white font-mono text-[11px]">+91 98765 43210</p>
+                <a
+                  href="tel:+917314203777"
+                  className="mt-0.5 block text-white font-mono text-[11px] hover:text-[#c28e58] transition-colors"
+                >
+                  +91 731 4203777
+                </a>
               </div>
               <div>
                 <span className="block text-[10px] font-bold uppercase tracking-wider text-[#c28e58]">
-                  Support Timings
+                  WhatsApp Desk
                 </span>
-                <p className="mt-0.5 text-[#a8988b] text-[11px]">Mon – Sat: 09:00 AM – 08:00 PM IST</p>
+                <a
+                  href="https://wa.me/918269950599"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-0.5 block text-white font-mono text-[11px] hover:text-[#c28e58] transition-colors"
+                >
+                  +91 82699 50599
+                </a>
               </div>
             </div>
           </div>
@@ -175,7 +202,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-[#20140c] pt-8 text-center sm:flex-row sm:text-left">
           <p className="text-[11px] text-[#a8988b]/70">
-            © {new Date().getFullYear()} MP Escapes. All Rights Reserved. Exclusively engineered for certified travel professionals.
+            © {new Date().getFullYear()} MP Escapes Pvt Ltd. All Rights Reserved. Exclusively engineered for certified travel professionals.
           </p>
 
           <div className="flex items-center gap-6">
