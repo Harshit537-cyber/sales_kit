@@ -428,10 +428,8 @@ export default function DropdownNav() {
       ref={containerRef}
       className="max-w-7xl mx-auto px-2 sm:px-4 -mt-10 relative z-40"
     >
-      {/* Container is relative so mobile dropdowns can span full container width */}
       <div className="relative bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl shadow-black/15 border border-[#EFE4D8] p-2 sm:p-3 grid grid-cols-2 md:grid-cols-5 gap-2 sm:gap-3">
         
-        {/* Destination Info */}
         <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("destination")}
@@ -610,7 +608,6 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        {/* Downloads */}
         <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("downloads")}
@@ -630,7 +627,6 @@ export default function DropdownNav() {
             />
           </button>
 
-          {/* FIXED: On mobile it spans full width of container (left-0 right-0 w-full), on desktop md:left-0 md:w-[420px] */}
           <div
             className={`${panelClass("downloads")} left-0 right-0 w-full md:w-[420px] md:right-auto md:left-0`}
           >
@@ -832,7 +828,7 @@ export default function DropdownNav() {
                                             {isDownloading ? (
                                               <Loader2 className="w-3.5 h-3.5 animate-spin text-[#976634]" />
                                             ) : (
-                                              <Download className="w-3.5 h-3.5 text-[#976634] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                              <Download className="w-3.5 h-3.5 text-[#976634]" />
                                             )}
                                           </div>
                                         </button>
@@ -916,7 +912,6 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        {/* Travel Essentials */}
         <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("essentials")}
@@ -1113,7 +1108,7 @@ export default function DropdownNav() {
                                           {downloadingFileId === file._id ? (
                                             <Loader2 className="w-3.5 h-3.5 animate-spin text-[#976634]" />
                                           ) : (
-                                            <Download className="w-3.5 h-3.5 text-[#976634] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            <Download className="w-3.5 h-3.5 text-[#976634]" />
                                           )}
                                         </div>
                                       </button>
@@ -1224,7 +1219,7 @@ export default function DropdownNav() {
                               {isDownloading ? (
                                 <Loader2 className="w-3.5 h-3.5 animate-spin text-[#976634]" />
                               ) : (
-                                <Download className="w-3.5 h-3.5 text-[#976634] opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <Download className="w-3.5 h-3.5 text-[#976634]" />
                               )}
                             </div>
                           </button>
@@ -1238,7 +1233,6 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        {/* Contact Us */}
         <div className="col-span-1 md:relative">
           <button
             onClick={() => toggle("contact")}
@@ -1344,7 +1338,6 @@ export default function DropdownNav() {
           </div>
         </div>
 
-        {/* Interactive Map Button */}
         <div className="col-span-2 md:col-span-1">
           <Link
             href="/maps"
